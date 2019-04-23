@@ -1,4 +1,4 @@
-# sp-vue-init based on vue-cli2 
+# sp-vue-init based on vue-cli2
 
 ## 安装依赖
 ```
