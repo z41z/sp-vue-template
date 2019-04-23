@@ -1,12 +1,16 @@
+/**
+ * 请求
+ */
+
 import axios from 'axios';
 
-// axios
-const service = axios.create({
-  timeout: 5000
+// 创建axios实例
+const $api = axios.create({
+  timeout: 5000 // 请求超时时间
 });
 
-// request
-service.interceptors.request.use(config => {
+// request拦截器
+$api.interceptors.request.use(config => {
   // Do something before request is sent
   config.headers['Content-Type'] = 'application/json;charset=UTF-8';
   return config;
@@ -15,12 +19,12 @@ service.interceptors.request.use(config => {
   Promise.reject(error);
 })
 
-// respone
-service.interceptors.response.use(
+// respone拦截器
+$api.interceptors.response.use(
   response => {
     const res = response.data;
     if (response.status !== 200 && res.status !== 200) {
-      return Promise.reject(res.status);
+      return Promise.reject(res);
     } else {
       return response.data;
     }
@@ -30,4 +34,4 @@ service.interceptors.response.use(
   }
 );
 
-export default service;
+export default $api;
