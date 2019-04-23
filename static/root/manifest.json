@@ -1,0 +1,16 @@
+{
+  "name": "sp-vue-init",
+  "short_name": "vue-cli3",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "sp-vue-init based on vue-cli3",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "launcher-icon-1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ]
+}
