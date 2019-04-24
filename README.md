@@ -1,4 +1,4 @@
-# sp-vue-init based on vue-cli3
+# sp-vue-init based on vue-cli3 and webpack4
 
 ## 安装依赖
 ```
