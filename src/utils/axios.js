@@ -16,6 +16,7 @@ $api.interceptors.request.use(config => {
   return config;
 }, error => {
   // Do something with request error
+  console.log(error)
   Promise.reject(error);
 })
 
@@ -30,7 +31,16 @@ $api.interceptors.response.use(
     }
   },
   error => {
-    return Promise.reject(error);
+    let message = error.message
+    let config = error.config
+    let { url, method, headers } = error.config;
+    let data = config.data || config.params
+    console.log(`🎫message:${message}`)
+    console.log(`🌈url:${url}`)
+    console.log(`💬data:${JSON.stringify(data)}`)
+    console.log(`🐱‍👤method:${method}`)
+    console.log(`🤔headers:${JSON.stringify(headers)}`)
+    return Promise.reject('❌😭😱💔');
   }
 );
 
