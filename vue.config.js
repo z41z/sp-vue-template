@@ -21,7 +21,7 @@ module.exports = {
       .plugin('html')
       .tap(args => {
         args[0] = {
-          template: 'index.html'
+          template: './static/index.html'
         }
         return args
       })
