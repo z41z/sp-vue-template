@@ -31,8 +31,8 @@ export default {
     }
   },
   mounted() {
-    getCoupon({ keyword: 11 },'post','a=1&b=2').then(res => {
-      console.log(res)
+    getCoupon({ data: { keyword: 11 }, method: 'get', search: 'a=1&b=2', name: '测试接口' }).then(res => {
+
     })
   },
   filters,

@@ -12,11 +12,11 @@ const $api = axios.create({
 // request拦截器
 $api.interceptors.request.use(config => {
   // Do something before request is sent
-  let { 
-    search, 
-    method, 
-    data, 
-    url 
+  let {
+    search,
+    method,
+    data,
+    url
   } = config;
   let methodRegx = /post|pust|patch/ig;
   let searchStr = search ? ('?' + search) : '';
@@ -45,8 +45,9 @@ $api.interceptors.response.use(
   error => {
     let message = error.message
     let config = error.config
-    let { url, method, headers } = error.config;
+    let { url, method, headers, name } = error.config;
     let data = config.data || config.params
+    console.log(`⚡name:${name}`)
     console.log(`🎫message:${message}`)
     console.log(`🌈url:${url}`)
     console.log(`💬data:${JSON.stringify(data)}`)
