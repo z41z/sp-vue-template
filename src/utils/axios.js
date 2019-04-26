@@ -12,6 +12,18 @@ const $api = axios.create({
 // request拦截器
 $api.interceptors.request.use(config => {
   // Do something before request is sent
+  let { 
+    search, 
+    method, 
+    data, 
+    url 
+  } = config;
+  let methodRegx = /post|pust|patch/ig;
+  let searchStr = search ? ('?' + search) : '';
+  let paramsName = methodRegx.test(method.toLowerCase()) ? 'data' : 'params';
+  config.data = null;
+  config[paramsName] = data;
+  config.url = url + searchStr;
   config.headers['Content-Type'] = 'application/json;charset=UTF-8';
   return config;
 }, error => {
