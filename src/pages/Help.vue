@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="help">
     <h1>{{msg}}</h1>
   </div>
 </template>
@@ -7,9 +7,8 @@
 export default {
   data() {
     return {
-      msg: 'This is an about page'
+      msg: 'This is an help page'
     }
   }
 }
 </script>
-

@@ -4,7 +4,7 @@
 
 module.exports = {
   '/api': {
-    target: 'http://sou.shybey.com/openJu.php',
+    target: 'http://127.0.0.1/',
     pathRewrite: { '^/api': '' },
     changeOrigin: true
   }
