@@ -1,5 +1,11 @@
 <template>
   <div class="home">
+    <div id="nav">
+      <template v-for="route in $router.routes">
+        <router-link :to="route.path">{{route.menuName}}</router-link>
+      </template>
+    </div>
+    <router-view />
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <span>{{name | capitalize}}</span>
     <span>{{age | sum}}</span>

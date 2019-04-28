@@ -13,17 +13,19 @@ const $api = axios.create({
 $api.interceptors.request.use(config => {
   // Do something before request is sent
   let {
-    search,
-    method,
-    data,
-    url
-  } = config;
+    search = '',
+    method = 'get',
+    data = {},
+    name = ''
+  } = config.options;
+  let { url } = config;
   let methodRegx = /post|pust|patch/ig;
   let searchStr = search ? ('?' + search) : '';
   let paramsName = methodRegx.test(method.toLowerCase()) ? 'data' : 'params';
   config.data = null;
   config[paramsName] = data;
   config.url = url + searchStr;
+  config.name = name;
   config.headers['Content-Type'] = 'application/json;charset=UTF-8';
   return config;
 }, error => {
@@ -45,14 +47,9 @@ $api.interceptors.response.use(
   error => {
     let message = error.message
     let config = error.config
-    let { url, method, headers, name } = error.config;
+    let { url = '', method = 'get', headers = {}, name = '' } = config;
     let data = config.data || config.params
-    console.log(`⚡name:${name}`)
-    console.log(`🎫message:${message}`)
-    console.log(`🌈url:${url}`)
-    console.log(`💬data:${JSON.stringify(data)}`)
-    console.log(`🐱‍👤method:${method}`)
-    console.log(`🤔headers:${JSON.stringify(headers)}`)
+    console.log(`💔😭😱💔😭😱💔\n⚡name:${name}\n🎫message:${message}\n🌈url:${url}\n💬data:${JSON.stringify(data)}\n🐱‍👤method:${method}\n🤔headers:${JSON.stringify(headers)}`);
     return Promise.reject('❌😭😱💔');
   }
 );
