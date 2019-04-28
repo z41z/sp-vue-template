@@ -25,5 +25,10 @@ module.exports = {
         }
         return args
       })
+  },
+  pwa: {
+    workboxOptions: {
+      importWorkboxFrom: 'local',
+    }
   }
 }
