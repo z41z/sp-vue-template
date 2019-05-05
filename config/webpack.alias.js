@@ -13,6 +13,8 @@ module.exports = {
   '@component': path.resolve('src/components'),
   '@const': path.resolve('src/const'),
   '@consts': path.resolve('src/const'),
+  '@directive': path.resolve('src/directives'),
+  '@directives': path.resolve('src/directives'),
   '@filter': path.resolve('src/filters'),
   '@filters': path.resolve('src/filters'),
   '@image': path.resolve('src/images'),
