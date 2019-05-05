@@ -49,7 +49,8 @@ $api.interceptors.response.use(
     let config = error.config
     let { url = '', method = 'get', headers = {}, name = '' } = config;
     let data = config.data || config.params
-    console.log(`💔😭😱💔😭😱💔\n⚡name:${name}\n🎫message:${message}\n🌈url:${url}\n💬data:${JSON.stringify(data)}\n🐱‍👤method:${method}\n🤔headers:${JSON.stringify(headers)}`);
+    let href = location.href;
+    console.log(`💔😭😱💔😭😱💔\n⚡name:${name}\n🎫message:${message}\n🌈href:${href}\n🌈url:${url}\n💬data:${JSON.stringify(data)}\n🐱‍👤method:${method}\n🤔headers:${JSON.stringify(headers)}`);
     return Promise.reject('❌😭😱💔');
   }
 );

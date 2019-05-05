@@ -1,7 +1,9 @@
 /**
  * 接口
  */
-import { COUPON } from '@api/url'
+import {
+  COUPON
+} from '@api/url'
 import $api from '@utils/axios'
 
 /**
@@ -18,6 +20,9 @@ import $api from '@utils/axios'
 export const getCoupon = (options = {}) => {
   return $api({
     url: COUPON.GET_LIST,
-    options
+    options: {
+      ...options,
+      name: '测试接口'
+    }
   })
 }

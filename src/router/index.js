@@ -10,4 +10,5 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   menus: []
+  // routes:[] 路由写在public.js里面
 })
