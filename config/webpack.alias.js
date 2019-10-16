@@ -11,6 +11,7 @@ module.exports = {
   '@com': path.resolve('src/components'),
   '@components': path.resolve('src/components'),
   '@component': path.resolve('src/components'),
+  '@directives': path.resolve('src/directives'),
   '@const': path.resolve('src/const'),
   '@consts': path.resolve('src/const'),
   '@filter': path.resolve('src/filters'),
